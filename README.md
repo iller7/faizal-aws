@@ -7,11 +7,12 @@
 
   <div align="center">
 
-[![Stars](https://raw.githubusercontent.com/iller7/faizal-aws/refs/heads/main/docs/images/stars.svg)](LICENSE)
-[![License](https://raw.githubusercontent.com/iller7/faizal-aws/refs/heads/main/docs/images/license.svg)](LICENSE)
+![GitHub License](https://img.shields.io/github/license/iller7/faizal-aws)
+![GitHub last commit](https://img.shields.io/github/last-commit/iller7/faizal-aws)
+![GitHub followers](https://img.shields.io/github/followers/:iller7)
 
   </div>
-  <h2>Amazon Elastic Kubernetes Service Setup</h2>
+  <h2>Amazon Elastic Kubernetes Service Workshop</h2>
 </div>
 
 ## Setup

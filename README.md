@@ -1,12 +1,12 @@
 <div align="center">
   <a href="https://github.com/iller7/faizal-aws" target="_blank" rel="noopener noreferrer">
     <picture>
-      <img width="160" src="docs/images/eks.png" alt="Amazon Elastic Kubernetes Service logo">
+      <img width="80" src="docs/images/eks.png" alt="Amazon Elastic Kubernetes Service logo">
     </picture>
   </a>
   <div align="center">
-    [![Stars](https://github.com/iller7/faizal-aws)](LICENSE)
-    [![License](https://github.com/iller7/faizal-aws/docs/images/license.svg)](LICENSE)
+    [![Stars](https://raw.githubusercontent.com/iller7/faizal-aws/refs/heads/main/docs/images/stars.svg)](LICENSE)
+    [![License](https://raw.githubusercontent.com/iller7/faizal-aws/refs/heads/main/docs/images/license.svg)](LICENSE)
   </div>
   <h2>Amazon Elastic Kubernetes Service Setup</h2>
 </div>

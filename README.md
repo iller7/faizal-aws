@@ -4,19 +4,11 @@
       <img width="160" src="docs/images/eks.png" alt="Amazon Elastic Kubernetes Service logo">
     </picture>
   </a>
-  
-  <br/>
-
   <div align="center">
-
-[![Stars](https://img.shields.io/github/stars/aws-samples/eks-workshop-v2)](LICENSE)
-[![License](https://img.shields.io/github/license/aws-samples/eks-workshop-v2)](LICENSE)
-
+    [![Stars](https://github.com/iller7/faizal-aws)](LICENSE)
+    [![License](https://github.com/iller7/faizal-aws/docs/images/license.svg)](LICENSE)
   </div>
-
-  <strong>
   <h2>Amazon Elastic Kubernetes Service Setup</h2>
-  </strong>
 </div>
 
 ## Setup
@@ -73,56 +65,30 @@ After you choose Submit, a pull request is automatically created in your Git rep
 
 ### Infra
 
-Use the cloudformation file in the./clouformation folder to deploy your infra using this command:
+First install the aws cli tool
+```sh
+brew install awscli
+```
+If you choose to bypass the sync method above, you can use the cloudformation file in the./clouformation folder to deploy your infra directly using this command:
+
 ```sh
 aws cloudformation deploy --output table --region eu-west-1 --profile FaizalAWS --stack-name faizal-infra --tags deployed-by=aws-cli --capabilities CAPABILITY_NAMED_IAM --template-file ./cloudformation/cfn.yaml
 ```
-
 This will create a Cloudfront Distribution with all your networking
 
-## Introduction
+## EKS
 
-The Amazon EKS Workshop is built to help users learn about Amazon EKS features and integrations with popular open-source projects. The workshop is abstracted into high-level learning modules, including Networking, Security, DevOps Automation, and more. These are further broken down into standalone labs focusing on a particular feature, tool, or use-case. To ensure a consistent and predictable learning experience, the Amazon EKS Workshop closely adheres to the following tenets:
+### Cluster
 
-**Tenets**:
-
-- **Modular**: The workshop is made up of standalone modules that can be individually completed, allowing you to start at any module and easily switch between them.
-- **Consistent sample app**: The workshop uses the same sample retail store application across all modules: AWS Containers Retail Sample.
-- **Amazon EKS-focused**: Although the workshop covers some Kubernetes basics, it primarily focuses on familiarizing the user with concepts directly related to Amazon EKS.
-- **Continuously tested**: We automatically test the infrastructure provisioning and CLI steps in the workshop, allowing us to keep the workshop updated and tracking the latest versions of Amazon EKS.
-
-## Navigating the repository
-
-The top level repository can be split is to several areas.
-
-### Site content
-
-The workshop content itself is a `docusaurus` site. All workshop content is written using Markdown and can be found in `website`.
-
-### Contributing content
-
-To learn how to author content on this repository, read [CONTRIBUTING.md](CONTRIBUTING.md) and the [authoring content guide](docs/authoring_content.md).
-
-### Workshop infrastructure
-
-The infrastructure required to run the workshop content (EKS cluster configuration, VPC networking, components like Helm charts) are defined as Terraform infrastructure-as-code configuration in the `terraform` directory.
-
-### Learner environment
-
-There are several tools that are required to run the workshop such as `kubectl` that need to be installed for a participant to complete the workshop content. This "learner environment" can be setup automatically using the scripts and other artifacts in the `environment` directory. This includes scripts to install all the pre-requisite tools, as well as container images to easily re-create a consistent environment.
-
-## Community
-
-### Governance
-
-- Steering Committee: [governance/steering.md](governance/steering.md)
-- Governance model: [governance/model.md](governance/model.md)
-- Tenets: [governance/tenets.md](governance/tenets.md)
-
-## Security
-
-See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
-
-## License
-
-This project is licensed under the Apache-2.0 License.
+We will setup the cluster with eksctl, if you need to install the `eksctl` tool then use:
+First install the eks cli tool
+```sh
+brew install eksctl
+```
+Now apply the the configuration file:
+```sh
+export EKS_CLUSTER_NAME=faizal-infra
+envsubst < ./cluster/eksctl/template.yaml > ./cluster/eksctl/cluster.yaml
+eksctl create cluster -f ./cluster/eksctl/cluster.yaml
+```
+This will take all the environment variables on your system and replace the variables in template.yaml into a new file called cluster.yaml

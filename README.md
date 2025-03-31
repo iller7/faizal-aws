@@ -9,7 +9,6 @@
 
 ![GitHub License](https://img.shields.io/github/license/iller7/faizal-aws)
 ![GitHub last commit](https://img.shields.io/github/last-commit/iller7/faizal-aws)
-![GitHub followers](https://img.shields.io/github/followers/:iller7)
 
   </div>
   <h2>Amazon Elastic Kubernetes Service Workshop</h2>

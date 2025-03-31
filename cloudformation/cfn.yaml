@@ -1,5 +1,13 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: Creates a code-server IDE for the EKS workshop
+Description: >
+  Creates a code-server IDE. Based on the EKS Workshop
+  aws cloudformation deploy --output table --region eu-west-1 --profile FaizalAWS --stack-name faizal-infra --tags deployed-by=aws-cli --capabilities CAPABILITY_NAMED_IAM --template-file ~/repos/faizal-aws/cloudformation/cfn.yaml
+
+Globals:
+  Tags:
+    - Key: "updated-by"
+      Value: "Faizal Sahebdin"
+
 Parameters:
   InstanceVolumeSize:
     Type: Number
@@ -38,7 +46,7 @@ Parameters:
   Environment:
     Type: String
     Description: For testing purposes only
-    Default: ""
+    Default: "dev"
 Mappings:
   PrefixListID:
     ap-northeast-1:

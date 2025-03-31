@@ -1,0 +1,4 @@
+template-file-path: cloudformation/cfn.yaml
+parameters: {}
+tags:
+  managed-by: git-sync

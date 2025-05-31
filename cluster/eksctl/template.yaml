@@ -1,17 +1,17 @@
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 availabilityZones:
-  - eu-west-1a
-  - eu-west-1b
-  - eu-west-1c
+  - ${AWS_REGION}a
+  - ${AWS_REGION}b
+  - ${AWS_REGION}c
 metadata:
-  name: faizal-infra
-  region: eu-west-1
+  name: ${EKS_CLUSTER_NAME}
+  region: ${AWS_REGION}
   version: "1.31"
   tags:
-    karpenter.sh/discovery: faizal-infra
-    created-by: FaizalAWS
-    env: faizal-infra
+    karpenter.sh/discovery: ${EKS_CLUSTER_NAME}
+    created-by: ${AWS_PROFILE}
+    env: ${EKS_CLUSTER_NAME}
 iam:
   withOIDC: true
 vpc:

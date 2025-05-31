@@ -509,7 +509,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       ImageId: !Ref AmiParameterStoreName
-      InstanceType: t3.medium
+      InstanceType: t3.micro
       BlockDeviceMappings:
         - Ebs:
             VolumeSize: !Ref InstanceVolumeSize
